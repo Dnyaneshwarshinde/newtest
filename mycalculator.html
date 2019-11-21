@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Calculator</h1>
+            <label for="">Value 1</label>
+            <input id="value1" class="form-control" type="number">
+            <div class="col-md-6">
+            <div class="form-group">
+             <label for="">Value 2</label>
+            <input id="value2" class="form-control" type="number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label> <input type="radio" name="operation" id="addition" checked> Addition </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button id="calculate" onclick="calculate()" class="btn btn-danger">Calculate</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-12">
+                            <input id="result" type="text" readonly class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4"></div>
+            </div>
+
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <script>
+            
+            function calculate() {
+                const value1 = parseInt($('#value1').val())
+                const value2 = parseInt($('#value2').val())
+                let answer = 0
+                const operation = $('input[name=operation]:checked').attr('id')
+                if (operation == 'addition') {
+                    answer = value1 + value2
+                } 
+
+                $('#result').val(answer)
+            }
+
+        </script>
+    </body>
+</html>
